@@ -1,0 +1,2 @@
+export function monthsToGoal(current:number,target:number,monthly:number){if([current,target,monthly].some(v=>!Number.isFinite(v)||v<0))throw new Error('목표 값은 0 이상이어야 합니다.');if(current>=target)return 0;if(monthly===0)return null;return Math.ceil((target-current)/monthly);}
+export function requiredMonthlySaving(current:number,target:number,months:number){if([current,target,months].some(v=>!Number.isFinite(v)||v<0))throw new Error('목표 값은 0 이상이어야 합니다.');if(months===0)return current>=target?0:null;return Math.max(0,(target-current)/months);}
